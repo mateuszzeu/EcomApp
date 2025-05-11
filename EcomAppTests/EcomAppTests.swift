@@ -9,28 +9,39 @@ import XCTest
 @testable import EcomApp
 
 final class EcomAppTests: XCTestCase {
-
-    override func setUpWithError() throws {
-        // Put setup code here. This method is called before the invocation of each test method in the class.
+    
+    func testToggleFavorite() {
+        let viewModel = ShopViewModel()
+        let productID = viewModel.products.first?.id ?? ""
+        let initialValue = viewModel.products.first?.isFavorite
+        
+        viewModel.toggleFavorite(for: productID)
+        let newValue = viewModel.products.first?.isFavorite
+        
+        XCTAssertNotEqual(initialValue, newValue)
     }
-
-    override func tearDownWithError() throws {
-        // Put teardown code here. This method is called after the invocation of each test method in the class.
+    
+    func testIncreaseQuantity() {
+        let viewModel = ShopViewModel()
+        let productID = viewModel.products.first?.id ?? ""
+        let startQuantity = viewModel.products.first?.quantity ?? 0
+        
+        viewModel.increaseQuantity(for: productID)
+        let endQuantity = viewModel.products.first?.quantity ?? 0
+        
+        XCTAssertEqual(endQuantity, startQuantity + 1)
     }
-
-    func testExample() throws {
-        // This is an example of a functional test case.
-        // Use XCTAssert and related functions to verify your tests produce the correct results.
-        // Any test you write for XCTest can be annotated as throws and async.
-        // Mark your test throws to produce an unexpected failure when your test encounters an uncaught error.
-        // Mark your test async to allow awaiting for asynchronous code to complete. Check the results with assertions afterwards.
+    
+    func testDecreaseQuantity() {
+        let viewModel = ShopViewModel()
+        let productID = viewModel.products.first?.id ?? ""
+        
+        viewModel.increaseQuantity(for: productID)
+        let middleQuantity = viewModel.products.first?.quantity ?? 0
+        
+        viewModel.decreaseQuantity(for: productID)
+        let finalQuantity = viewModel.products.first?.quantity ?? 0
+        
+        XCTAssertEqual(finalQuantity, middleQuantity - 1)
     }
-
-    func testPerformanceExample() throws {
-        // This is an example of a performance test case.
-        self.measure {
-            // Put the code you want to measure the time of here.
-        }
-    }
-
 }
