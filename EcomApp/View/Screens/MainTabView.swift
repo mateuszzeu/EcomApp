@@ -15,11 +15,13 @@ struct MainTabView: View {
             BrowseView(viewModel: viewModel)
                 .tabItem {
                     Label("Browse", systemImage: "list.bullet")
+                        .accessibilityLabel("Browse products")
                 }
             
             CheckoutView(viewModel: viewModel)
                 .tabItem {
                     Label("Checkout", systemImage: "cart")
+                        .accessibilityLabel("View checkout")
                 }
         }
     }

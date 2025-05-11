@@ -9,7 +9,7 @@ import SwiftUI
 
 struct BrowseView: View {
     @ObservedObject var viewModel: ShopViewModel
-
+    
     var body: some View {
         NavigationStack {
             ZStack {
@@ -24,10 +24,12 @@ struct BrowseView: View {
                     }
                 }
                 .navigationTitle("Browse")
+                    .accessibilityAddTraits(.isHeader)
                 .toolbar {
                     ToolbarItem(placement: .navigationBarTrailing) {
                         Text(viewModel.totalPrice)
                             .font(.headline)
+                            .accessibilityLabel("Total price is \(viewModel.totalPrice)")
                     }
                 }
             }

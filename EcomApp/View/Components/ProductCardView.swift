@@ -25,6 +25,7 @@ struct ProductCardView: View {
                                 Image(systemName: product.isFavorite ? "heart.fill" : "heart")
                                     .foregroundColor(Color(red: 0.05, green: 0.11, blue: 0.55))
                                     .font(.subheadline)
+                                    .accessibilityLabel(product.isFavorite ? "Remove from favorites" : "Add to favorites")
                             }
                             Spacer()
                         }
@@ -35,6 +36,7 @@ struct ProductCardView: View {
                     Image(product.image.replacingOccurrences(of: ".png", with: ""))
                         .resizable()
                         .frame(maxWidth: 80, maxHeight: 85)
+                        .accessibilityHidden(true)
                 }
                 .frame(width: geo.size.height, height: geo.size.height)
                 
@@ -44,6 +46,7 @@ struct ProductCardView: View {
                     Text(product.description)
                         .font(.footnote)
                         .foregroundColor(.black.opacity(0.6))
+                        .accessibilityLabel("Product: \(product.description)")
                     
 
                     Text(product.price)
@@ -51,6 +54,7 @@ struct ProductCardView: View {
                         .bold()
                         .foregroundColor(Color(red: 0.55, green: 0, blue: 0.15))
                         .padding(.top, 50)
+                        .accessibilityLabel("Price: \(product.price)")
 
                     HStack(spacing: 0) {
                         Button {
@@ -62,6 +66,7 @@ struct ProductCardView: View {
                                 .frame(height: 20)
                                 .background(Color.yellow.opacity(0.4))
                                 .foregroundColor(.black)
+                                .accessibilityLabel("Decrease quantity")
                         }
 
                         Text("\(product.quantity)")
@@ -70,6 +75,7 @@ struct ProductCardView: View {
                             .frame(height: 20)
                             .background(.background)
                             .foregroundColor(Color.primary)
+                            .accessibilityLabel("Quantity: \(product.quantity)")
 
                         Button {
                             viewModel.increaseQuantity(for: product.id)
@@ -80,6 +86,7 @@ struct ProductCardView: View {
                                 .frame(height: 20)
                                 .background(product.quantity >= product.inStock ? Color.yellow.opacity(0.4) : Color.yellow)
                                 .foregroundColor(.black)
+                                .accessibilityLabel("Increase quantity")
                         }
                     }
                     .frame(height: 20)
@@ -90,6 +97,7 @@ struct ProductCardView: View {
             }
             .background(Color(red: 1.0, green: 0.98, blue: 0.9))
             .clipShape(RoundedRectangle(cornerRadius: 5))
+            .accessibilityElement(children: .combine)
         }
         .frame(height: 140)
         .padding(.top, 10)

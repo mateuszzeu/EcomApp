@@ -43,20 +43,24 @@ struct CheckoutView: View {
                                 .cornerRadius(8)
                                 .padding()
                         }
+                        .accessibilityLabel("Proceed to checkout")
                         .alert("Products checked out:", isPresented: $showingAlert) {
                             Button("OK", role: .cancel) { }
                         } message: {
                             Text(viewModel.selectedProducts.map { $0.id }.joined(separator: ", "))
                         }
-                        
+
                         Divider()
                     }
                 }
+                .accessibilityElement(children: .contain)
                 .navigationTitle("Checkout")
+                    .accessibilityAddTraits(.isHeader)
                 .toolbar {
                     ToolbarItem(placement: .navigationBarTrailing) {
                         Text(viewModel.totalPrice)
                             .font(.headline)
+                            .accessibilityLabel("Total price is \(viewModel.totalPrice)")
                     }
                 }
             }
