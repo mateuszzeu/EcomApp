@@ -15,7 +15,7 @@ struct ProductCardView: View {
         GeometryReader { geo in
             HStack {
                 ZStack {
-                    Color.white
+                    Color(.systemBackground)
 
                     VStack {
                         HStack {
@@ -68,7 +68,8 @@ struct ProductCardView: View {
                             .font(.footnote)
                             .frame(maxWidth: .infinity)
                             .frame(height: 20)
-                            .background(Color.white)
+                            .background(.background)
+                            .foregroundColor(Color.primary)
 
                         Button {
                             viewModel.increaseQuantity(for: product.id)
