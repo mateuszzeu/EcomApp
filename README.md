@@ -27,19 +27,18 @@
 
 ## 📸 Screenshots
 
-### 💻 iPad – Browse & Checkout
-
-<p align="center">
-  <img src="https://github.com/user-attachments/assets/b16e728f-c299-4595-94f3-2beac021e169" width="332">
-  <img src="https://github.com/user-attachments/assets/2fc88d82-9c0c-44ff-8470-db00ff4c1173" width="600" height="478">
-</p>
-
-
 ### 📱 iPhone – Browse & Checkout
 
 <p align="center">
   <img src="https://github.com/user-attachments/assets/ce238cb3-79e1-49c6-8225-9a37fd7622f0" width="332">
   <img src="https://github.com/user-attachments/assets/2872ec73-3a2d-4926-a226-b2c32aec5f7c" width="332">
+</p>
+
+### 💻 iPad – Browse & Checkout
+
+<p align="center">
+  <img src="https://github.com/user-attachments/assets/b16e728f-c299-4595-94f3-2beac021e169" width="432">
+  <img src="https://github.com/user-attachments/assets/2fc88d82-9c0c-44ff-8470-db00ff4c1173" width="673" height="478">
 </p>
 
 
@@ -52,3 +51,5 @@
 | **UserDefaults**         | Simple local storage to persist product state                |
 | **XCTest & XCTest UI**   | Testing for business logic and tab navigation                |
 | **VoiceOver Support**    | Improves usability for accessibility users
+
+---
