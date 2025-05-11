@@ -1,17 +1,17 @@
 //
-//  EcomAppApp.swift
+//  EcomApp.swift
 //  EcomApp
 //
-//  Created by Liza on 09/05/2025.
+//  Created by Liza on 10/05/2025.
 //
 
 import SwiftUI
 
 @main
-struct EcomAppApp: App {
+struct EcomApp: App {
     var body: some Scene {
         WindowGroup {
-            ContentView()
+            MainTabView()
         }
     }
 }

@@ -1,0 +1,11 @@
+.DS_Store
+*.xcuserstate
+*.xcworkspace
+*.xccheckout
+*.xcscmblueprint
+DerivedData/
+.idea/
+.build/
+*.xcuserdata/
+timeline.xctimeline
+playground.xcworkspace
